@@ -4,26 +4,20 @@ Created on Sat Jan  8 20:45:07 2022
 
 @author: terad
 """
-import bisect 
-import heapq
+
 
 N,K = map(int,input().split())
 P = list(map(int,input().split()))
+Q = sorted(P,reverse = True)
 
-#Kが2以上として考える
-Q = P[:K]
-heapq.heapify(Q)
-knum = heapq.heappop(Q)
-print(min_num)
+index = K-1
+ans = []
 
-
-for i in range(K,N):
-    p = P[i]
-    if min_num <= p:
-        
-        
-        
-    print(Psort[0])
-    
-
+#配列の後ろから見る
+for i in range(N-1,K-2,-1):
+    print(Q[index])
+    #ポップした値が現在の答えより大きければ
+    a = P[i]
+    if a >= Q[index]:
+        index -= 1
         
