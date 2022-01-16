@@ -9,35 +9,41 @@ from collections import deque
 import sys
 
 a,N = map(int,input().split())
+m = 1
+
+#探索木の深さを格納する配列
+while m < N:
+    m *= 10
+d = [-1] * m
+    
 
 Q = deque()
 Q.append(N)
-ans = 0
+d[N] = 0
 
-while Q:
-    ans += 1
+i = 0
+
+while Q and i < 10**6:
+    
     x = Q.popleft()
+    dc = d[x]
     
     if x == 1:
-        for i in range(ans):
-            if ans < 2**i:
-                print(i)
-                sys.exit()
-                
+        print(dc)
         sys.exit()
+                
+        
     if x % a == 0:
         Q.append(x//a)
-    else :
-        Q.append(-1)
+        d[x//a] = dc + 1
+    
         
     if x >= 10 and x % 10 != 0:
         t,u = str(x%10),str(x//10)
         Q.append(int(t+u))
-    else :
-        Q.append(-1)
-        
-    
-    
+        d[int(t+u)] = dc + 1
+
+    i += 1    
 
 print(-1)        
     
