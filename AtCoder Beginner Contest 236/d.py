@@ -26,5 +26,5 @@ for x in permutations(range(2*N)):
     if ans < check:
         ans = check
 
-     
+print(ans)     
     
