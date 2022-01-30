@@ -17,7 +17,7 @@ if A[0] != 0:
 """ 
    
 for a in A:
-    if a + W >= x >= a:
+    if a + W > x >= a:
         x = a + W
         
     elif x < a:
@@ -25,9 +25,9 @@ for a in A:
         x = a+W
         
 
-if x < L:
+if x != L:
     ans += (int((L-x-0.001)//W)+1)
       
-print(int(ans))
+print(ans)
 
     
