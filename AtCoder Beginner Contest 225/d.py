@@ -10,8 +10,8 @@ Created on Thu Feb 10 22:02:14 2022
 """
 
 N,Q = map(int,input().split())
-pre = [-1] + [-1] + [i for i in range(1,N)]
-post = [-1] + [i for i in range(2,N+1)] + [-1]
+pre = [-1] * (N+1)
+post = [-1] * (N+1)
 
 for i in range(Q):
     q,*xy = map(int,input().split())
@@ -36,13 +36,14 @@ for i in range(Q):
             else:
                 break
         
+        ans = []
         while True:
-            if post[p] != -1:
-                print(p,end=' ')
+            if p != -1:
+                ans.append(p)
                 p = post[p]
             else:
-                print('\n')
-                break
+                print(len(ans),*ans)
+       
             
             
         
