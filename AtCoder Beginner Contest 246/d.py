@@ -35,7 +35,7 @@ d = 10 ** 20
 for i in range(n_low,n_high):
     if i % 2 == 0:
         
-    j_low
+    
     num = i**3 + i**2 * j + i * j**2 + j**3
     if num - N < 0:
         break
